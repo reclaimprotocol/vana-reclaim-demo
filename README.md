@@ -1,7 +1,5 @@
 # Vana - Demo
 
-A React application demonstrating integration with the Reclaim Protocol for Vana Proof of Concept
-
 This is a demo website that uses `@reclaimprotocol/js-sdk` to interact with the Reclaim protocol.
 
 ## Overview
@@ -21,20 +19,19 @@ To get started, clone this repository and install the dependencies:
 npm install
 ```
 
-#### 2. Set up Environment Variables
-```bash
-cp .env.example .env
-```
 
-Edit the `.env` file and set the `VITE_RECLAIM_APP_ID` and `VITE_RECLAIM_APP_SECRET` to the values you received from Reclaim Developer Portal.
-
-#### 3. Get Your Credentials
+#### 2. Get Your Credentials
 1. Sign up at [dev.reclaimprotocol.org](https://dev.reclaimprotocol.org)
 2. Create a new application in the dashboard and add a provider
 3. Save the following credentials:
    - Application ID
    - Application Secret
    - Provider ID
+
+#### 3. Set up Environment Variables
+```bash
+cp .env.example .env
+```
 
 #### 4. Configure Credentials
 Open `src/App.js` and replace the placeholder values:
@@ -60,45 +57,6 @@ npm start
 4. Complete the verification process
 5. View the proof results!
 
-## Prerequisites
-
-Before running this demo, you'll need:
-
-1. **Reclaim Protocol Developer Portal Account**: Sign up at [dev.reclaimprotocol.org](https://dev.reclaimprotocol.org)
-2. **Application Credentials**: 
-   - Application ID
-   - Application Secret
-   - Provider ID
-3. **Node.js**: Version 18 or higher
-
-## Configuration
-
-### Required Credentials
-
-You need to obtain the following from the [Reclaim Protocol Developer Portal](https://dev.reclaimprotocol.org):
-
-- **APP_ID**: application ID
-- **APP_SECRET**: application secret
-- **PROVIDER_ID**: provider ID 
-
-### Environment Variables
-
-1. Create a `.env` file in the root directory:
-```bash
-cp .env.example .env
-```
-
-2. Edit the `.env` file and set your credentials:
-```env
-REACT_APP_RECLAIM_APP_ID=your_app_id_here
-REACT_APP_RECLAIM_APP_SECRET=your_app_secret_here
-```
-
-3. Update the App.js to use environment variables:
-```javascript
-const APP_ID = process.env.REACT_APP_RECLAIM_APP_ID
-const APP_SECRET = process.env.REACT_APP_RECLAIM_APP_SECRET
-```
 
 ### Update Provider IDs
 
@@ -121,32 +79,6 @@ The main `App` component manages the following state:
 - `reclaimProofRequest`: The initialized Reclaim Proof Request instance
 - `triggerReclaimFlow()`: Triggers the Reclaim flow and starts the verification session
 - `proofs`: The received proof data after successful verification
-
-### Key Functions
-
-#### `initializeReclaim()`
-Initializes the Reclaim Proof Request with your application credentials. Called automatically on component mount.
-
-#### `handleCreateClaim()`
-Creates a new verification claim and starts the verification session. This function:
-- Triggers the Reclaim flow and starts the verification session
-
-
-### Proof Handling
-
-The application handles different types of proof responses:
-
-1. **String Response**: When using custom callback URLs, a message is returned
-2. **Object Response**: When using default callback URLs, proof data is returned
-3. **Array Response**: When using cascading providers, multiple proofs may be returned
-
-## Dependencies
-
-### Core Dependencies
-
-- **@reclaimprotocol/js-sdk**: Official Reclaim Protocol JavaScript SDK
-- **react**: React library for building user interfaces
-- **react-dom**: React DOM rendering
 
 ## API Reference
 
@@ -180,23 +112,9 @@ const proofRequest = await ReclaimProofRequest.init(
 }
 ```
 
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"Reclaim Proof Request not initialized"**
-   - Ensure your credentials are correctly configured
-   - Check that the Reclaim SDK is properly imported
-
-2. **Verification fails**
-   - Check your provider ID is correct
-   - Verify your application has the necessary permissions
-   - Review the error logs for specific failure reasons
-
 ## Contributing
 
-1. Fork the repository
+1. Fork the repository [https://github.com/reclaimprotocol/vana-reclaim-demo](https://github.com/reclaimprotocol/vana-reclaim-demo)
 2. Create a feature branch
 3. Make your changes
 4. Add tests if applicable
