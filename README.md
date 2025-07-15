@@ -1,4 +1,4 @@
-# Vana - Proof of Concept Demo
+# Vana - Demo
 
 A React application demonstrating integration with the Reclaim Protocol for Vana Proof of Concept
 
