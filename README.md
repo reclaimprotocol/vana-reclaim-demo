@@ -29,7 +29,7 @@ cp .env.example .env
 Edit the `.env` file and set the `VITE_RECLAIM_APP_ID` and `VITE_RECLAIM_APP_SECRET` to the values you received from Reclaim Developer Portal.
 
 #### 3. Get Your Credentials
-1. Sign up at [dev.reclaimprotocol.com](https://dev.reclaimprotocol.com)
+1. Sign up at [dev.reclaimprotocol.org](https://dev.reclaimprotocol.org)
 2. Create a new application in the dashboard and add a provider
 3. Save the following credentials:
    - Application ID
